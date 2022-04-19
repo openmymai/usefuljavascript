@@ -2,6 +2,10 @@ import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 
 const Index = () => {
+  // Given an integer array, move all elements that are 0 to the left
+  // while maintaining the order of other elements in the array. 
+  // The array has to be modified in-place.
+  
   let moveZeroToLeft = (A) => {
     if (A.length < 1) {
       return
