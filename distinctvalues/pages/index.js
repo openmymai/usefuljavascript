@@ -33,6 +33,8 @@ const Home = () => {
     return map
   }, {})
 
+  console.log(mapoutput)
+
   var array = Object.keys(mapoutput).map(function(name) {
     return {
       fullName: name,
@@ -40,6 +42,7 @@ const Home = () => {
     }
   })
 
+  console.log(array)
   return (
     <div className="container">
       <br />
