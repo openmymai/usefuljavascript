@@ -1,22 +1,22 @@
 # JavaScript Data Structures and Algorithms
 
 Big-O Notation<br />
-JavaScript: Unique Parts
-JavaScript Numbers
-JavaScript Strings
-JavaScript Arrays
-JavaScript Objects
-JavaScript Memory Management
-Recursion
-Sets
-Searching and Sorting
-Hash Tables
-Stacks and Queues
-Linked Lists
-Caching
-Trees
-Heaps
-Graphs
-Advanced Strings
-Dynamic Programming
-Bit Manipulation
+JavaScript: Unique Parts<br />
+JavaScript Numbers<br />
+JavaScript Strings<br />
+JavaScript Arrays<br />
+JavaScript Objects<br />
+JavaScript Memory Management<br />
+Recursion<br />
+Sets<br />
+Searching and Sorting<br />
+Hash Tables<br />
+Stacks and Queues<br />
+Linked Lists<br />
+Caching<br />
+Trees<br />
+Heaps<br />
+Graphs<br />
+Advanced Strings<br />
+Dynamic Programming<br />
+Bit Manipulation<br />
