@@ -1,6 +1,6 @@
 # JavaScript Data Structures and Algorithms
 
-Big-O Notation
+Big-O Notation<br />
 JavaScript: Unique Parts
 JavaScript Numbers
 JavaScript Strings
