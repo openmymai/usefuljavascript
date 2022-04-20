@@ -1,0 +1,21 @@
+{
+  "name": "jsdatastructure",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "NODE_ENV=production next start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "next": "^12.1.5",
+    "react": "^18.0.0",
+    "react-bootstrap": "^2.3.0",
+    "react-dom": "^18.0.0"
+  }
+}
