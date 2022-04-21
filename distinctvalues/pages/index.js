@@ -4,13 +4,13 @@ const Home = () => {
 
   var data = {
     order: [{
-        invoiceToFullName: "Willy",
+        invoiceToFullName: " Willy",
         priceGross: 1200,
         reletive: "cash"
       },
       {
-        invoiceToFullName: "Willy",
-        priceGross: 1200,
+        invoiceToFullName: "Willy ",
+        priceGross: 1500,
         reletive: "cash"
       },
       {
@@ -26,16 +26,17 @@ const Home = () => {
     ]
   }
 
-  var mapoutput = data.order.reduce(function(map, invoice) {
-    var name = invoice.invoiceToFullName
+  var mapoutput = data.order.reduce((map, invoice) => {
+    var name = invoice.invoiceToFullName.trim()
     var price = +invoice.priceGross
     map[name] = (map[name] || 0) + price
+    console.log(map)
     return map
   }, {})
 
   console.log(mapoutput)
 
-  var array = Object.keys(mapoutput).map(function(name) {
+  var array = Object.keys(mapoutput).map((name) => {
     return {
       fullName: name,
       totalPriceGross: mapoutput[name]

@@ -8,7 +8,14 @@ const App = () => {
     [7,8,9]
   ]
 
-  const matrixReverse = matrix[0].map((col,index) => matrix.map(row => row[index]).reverse())
+  var str = "hello"
+  const spreadStr = [...str]
+
+  // Spread Operator
+  const spreadMatrix = [...matrix]
+  // Matrix Clockwise Rotate 90 degree 
+  const matrixClock = matrix[0].map((col,index) => matrix.map(row => row[index]).reverse())
+  // Matrix Anti Clockwise Rotate 90 degree 
   const matrixAntiClock = matrix[0].map((col, index) => matrix.map(row => row[matrix.length - 1 - index]))
   return (
     <div>
@@ -21,11 +28,15 @@ const App = () => {
         <br />
         Rotate Matrix Clockwise 90 degree
         <br />
-        {JSON.stringify(matrixReverse)}
+        {JSON.stringify(matrixClock)}
         <br />
         Rotate Matrix Anti Clockwise 90 degree
         <br />
         {JSON.stringify(matrixAntiClock)}
+        <br />
+        {JSON.stringify(spreadMatrix.join(" "))}
+        <br />
+        {spreadStr.join(" ")}
 
       </Container>
       <hr />
