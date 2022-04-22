@@ -17,27 +17,28 @@ const App = () => {
   const matrixClock = matrix[0].map((col,index) => matrix.map(row => row[index]).reverse())
   // Matrix Anti Clockwise Rotate 90 degree 
   const matrixAntiClock = matrix[0].map((col, index) => matrix.map(row => row[matrix.length - 1 - index]))
+
   return (
     <div>
       <br />
       <hr />
       <Container>
-        Original
+        <h1>Original Array</h1>
         <br />
         {JSON.stringify(matrix)}
         <br />
-        Rotate Matrix Clockwise 90 degree
+        <h1>Rotate Matrix Clockwise 90 degree</h1>
         <br />
         {JSON.stringify(matrixClock)}
         <br />
-        Rotate Matrix Anti Clockwise 90 degree
+        <h1>Rotate Matrix Anti Clockwise 90 degree</h1>
         <br />
         {JSON.stringify(matrixAntiClock)}
         <br />
         {JSON.stringify(spreadMatrix.join(" "))}
         <br />
         {spreadStr.join(" ")}
-
+        <br />
       </Container>
       <hr />
     </div>
