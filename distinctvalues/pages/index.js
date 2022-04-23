@@ -5,22 +5,22 @@ const Home = () => {
   var data = {
     order: [{
         invoiceToFullName: " Willy",
-        priceGross: 1200,
+        priceGross: 1200.33,
         reletive: "cash"
       },
       {
         invoiceToFullName: "Willy ",
-        priceGross: 1500,
+        priceGross: 1500.21,
         reletive: "cash"
       },
       {
         invoiceToFullName: "John Doe",
-        priceGross: 500,
+        priceGross: 500.55,
         reletive: "credit"
       },
       {
         invoiceToFullName: "John Doe",
-        priceGross: 1600,
+        priceGross: 1600.11,
         reletive: "cash"
       },
     ]
@@ -29,7 +29,8 @@ const Home = () => {
   var mapoutput = data.order.reduce((map, invoice) => {
     var name = invoice.invoiceToFullName.trim()
     var price = +invoice.priceGross
-    map[name] = (map[name] || 0) + price
+    // Without || 0, it print NaN (Not a number), double || to precise it.
+    map[name] = (map[name] || 0) + price 
     console.log(map)
     return map
   }, {})
