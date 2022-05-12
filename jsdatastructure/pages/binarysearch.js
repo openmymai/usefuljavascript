@@ -39,7 +39,7 @@ const binarysearch = () => {
 
     return val < arr[mid]
     ? binarySearchRecursive(arr, val, start, mid - 1)
-    : binarySearchRecursive(arr, val, mid+1, end)
+    : binarySearchRecursive(arr, val, mid + 1, end)
   }
 
   return (
