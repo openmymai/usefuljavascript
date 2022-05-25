@@ -3,8 +3,6 @@ import Link from 'next/link'
 import { Container } from 'react-bootstrap'
 
 const App = () => {
-
-
   return (
     <div>
       <br />

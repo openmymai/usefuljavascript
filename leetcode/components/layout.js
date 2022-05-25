@@ -1,6 +1,5 @@
 import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link'
 import { Container, Navbar, Nav } from 'react-bootstrap';
 
 const Layout = (props) => {
@@ -13,27 +12,22 @@ const Layout = (props) => {
         <title>{title}</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link
-          rel="stylesheet"
-          crossOrigin="anonymous"
-        />
+        <link rel="stylesheet" crossOrigin="anonymous" />
+        
       </Head>
       <Container>
       <header>
         <Navbar>
           <Container fluid>
             <Navbar.Brand href="/">Leetcode</Navbar.Brand>
-
-
           </Container>
         </Navbar>
       </header>
-      
         {props.children}
         <br />
-        <footer>
-          Leetcode Learning Tutorial Ⓡ
-        </footer>
+      <footer>
+      เรียน Leetcode ฝึกทักษะ | Leetcode<sup>Ⓡ</sup> Learning Tutorial
+      </footer>
       </Container>
     </div>
   );
