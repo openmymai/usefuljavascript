@@ -67,10 +67,46 @@ const Array = () => {
     })
   }
 
+
+  // Duplicate Zeros
+  var duplicateZeros = (array) => {
+    array = [1,0,3,4,0,5,6,0,2]
+    for (let i=0;i<array.length;i++) {
+      if (array[i]==0) {
+        array.splice(i,0,0)
+        array.pop()
+        i++
+      }
+    }
+    return array
+  }
+
+  // Merge Sorted Array
+  var merge = function (nums1, m, nums2, n) {
+    nums1=[1,2,3,0,0,0]
+    m=+3
+    nums2=[2,5,6]
+    n=+3
+    m--
+    n--
+    let i=nums1.length-1
+    while(i>=0) {
+      if(n>-1&&m>-1&&nums[m]>=nums2[n]) {
+        nums1[i] = nums1[m]
+        nums1[m] = nums2[n]
+        m--
+      }
+      else if (n>-1){
+        nums1[i]=nums2[n--]
+      }
+      i--
+
+    }
+  }
   return (
     <div>
       <br />
-      <h3>Max consecutive ones of: {JSON.stringify(array)}</h3>
+      <h4>Max consecutive ones of: {JSON.stringify(array)}</h4>
       <Form>
         <Form.Group>
         <Row>
@@ -83,11 +119,11 @@ const Array = () => {
         </Row>
         </Form.Group>
       </Form>
-      <h3>Max Consecutive Ones is {findMaxConsecutiveOnes(array)}</h3>
+      <h4>Max Consecutive Ones is {findMaxConsecutiveOnes(array)}</h4>
       <hr />
 
       <br />
-      <h3>Even Number: {JSON.stringify(arr)}</h3>
+      <h4>Even Number: {JSON.stringify(arr)}</h4>
       <Form>
         <Form.Group>
         <Row>
@@ -100,13 +136,21 @@ const Array = () => {
         </Row>
         </Form.Group>
       </Form>
-      <h3>Number of digits of even number: {findNumbersWithEvenNum(arr)}</h3>
+      <h4>Number of digits of even number: {findNumbersWithEvenNum(arr)}</h4>
       <hr />
 
       <br />
-      <h3>Array: {JSON.stringify(arr)}</h3>
-      <h3>Number of digits of even number: {JSON.stringify(sortSquare(arr))}</h3>
+      <h4>Array: {JSON.stringify(arr)}</h4>
+      <h4>Number of digits of even number: {JSON.stringify(sortSquare(arr))}</h4>
       <hr />
+
+      <br />
+      <h4>Duplicate Zeros Array: {JSON.stringify([1,0,3,4,0,5,6,0,2])}</h4>
+      <h4>Duplicate Zero: {JSON.stringify(duplicateZeros(array))}</h4>
+      <hr />
+
+      <br />
+      <h4>Merge Sorted Array: {JSON.stringify(merge)}</h4>
     </div>
   )
 }
