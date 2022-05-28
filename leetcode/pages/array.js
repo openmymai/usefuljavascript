@@ -100,7 +100,79 @@ const Array = () => {
         nums1[i]=nums2[n--]
       }
       i--
+    }
+  }
 
+  // Remove Element
+  var removeElement = (nums, val) => {
+    var len = nums.length
+    var count = 0
+    for (let i=0; i<len; i++){
+      if (nums[i] !== val)
+        nums[count++] = nums[i]
+    }
+    return count
+  }
+  var removeElementFilter = (nums, val) => {
+    return nums.filter(num => num !== val)
+  }
+
+  // Remove Duplication
+  var removeDuplicate = (nums) => {
+    var deDup = [...new Set(nums)]
+    return deDup
+  }
+
+  var removeDuplicateIteration = (nums) => {
+    var seen = {}
+    var out = []
+    var len = nums.length
+    var j = 0
+    var count = 0
+    for(var i=0;i<len;i++){
+      var item = nums[i]
+      if(seen[item] !== 1) {
+        seen[item] = 1
+        out[j++] = item
+        count++
+        console.log(seen)
+        console.log(count)
+      }
+    }
+    return out
+  }
+
+  // Check if N and its double exist
+  const checkIfExist = (arr) => {
+    var len = arr.length
+    for (let i=0;i<len;i++){
+      var curr = arr[i]
+      for(let j=0;j<len;j++){
+        var poss = arr[j]
+        if (curr === 2 * poss && i !== j) 
+          return true
+      }
+    }
+    return false
+  }
+
+  // Binary Search
+  const binarySearch = (arr, val) => {
+    let start = 0, end = arr.length
+
+    while (start < end) {
+      let mid = Math.floor((start+end)/2)
+
+      if (arr[mid] === val) {
+        return mid
+      }
+
+      if (val< arr[mid]) {
+        end = mid-1
+      } else {
+        start = mid+1
+      }
+      return -1
     }
   }
   return (
@@ -151,6 +223,17 @@ const Array = () => {
 
       <br />
       <h4>Merge Sorted Array: {JSON.stringify(merge)}</h4>
+      <hr />
+
+      <br />
+      <h4>Remove Element: {removeElement([3,2,2,3],3)}</h4>
+      <h4>Remove Element Filter: {JSON.stringify(removeElementFilter([3,2,2,3],3))}</h4>
+      <hr />
+
+      <br />
+      <h4>Deduplication: {JSON.stringify([3,2,2,3,3,4,5,6,10,11,2,12,31,11,31,32])}</h4>
+      <h4>Deduplication Iteration: {JSON.stringify(removeDuplicateIteration([3,2,2,3,3,4,5,6,10,11,2,12,31,11,31,32]))}</h4>
+      <hr />
     </div>
   )
 }
