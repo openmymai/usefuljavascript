@@ -8,7 +8,11 @@ const Array = () => {
 
   const saveInput = e => {
     // + for changing string to number
-    setInput(+e.target.value)
+    const re = /^[0-1\b]+$/
+
+    if (e.target.value === '' || re.test(e.target.value)) {
+      setInput(+e.target.value)
+    }
   }
 
   const addNewItem = () => {
@@ -135,8 +139,6 @@ const Array = () => {
         seen[item] = 1
         out[j++] = item
         count++
-        console.log(seen)
-        console.log(count)
       }
     }
     return out
@@ -156,25 +158,59 @@ const Array = () => {
     return false
   }
 
-  // Binary Search
-  const binarySearch = (arr, val) => {
-    let start = 0, end = arr.length
+  // Replace Elements with Greatest Element on the right side
 
-    while (start < end) {
-      let mid = Math.floor((start+end)/2)
-
-      if (arr[mid] === val) {
-        return mid
-      }
-
-      if (val< arr[mid]) {
-        end = mid-1
-      } else {
-        start = mid+1
-      }
-      return -1
+  const replaceElements = (arr) => {
+    let len = arr.length
+    let max_from_right = arr[len-1]
+    arr[len-1] = -1
+    
+    for (let i=len-2;i>=0;i--) {
+      let temp = arr[i]
+      arr[i] = max_from_right
+      
+      if(max_from_right<temp)
+        max_from_right = temp
     }
+    return arr
   }
+
+  // Move Zeros
+  // Move Zeros to the right
+
+  const moveZeroToRight = (nums) => {
+    let nonZeroIndex = 0
+    let len = nums.length
+    for(let i=0;i<len;i++) {
+      if(nums[i] != 0) {
+        nums[nonZeroIndex] = nums[i]
+        nonZeroIndex++
+      }
+    }
+    for(let i=nonZeroIndex;i<len;i++){
+      nums[i] = 0
+    }
+    return nums
+  }
+
+  const moveZeroToLeft = (nums) => {
+    let nonZeroIndex = nums.length - 1
+    let len = nums.length - 1
+    for (let i=len;i>=0;i--) {
+      if(nums[i] != 0){
+        nums[nonZeroIndex] = nums[i]
+        nonZeroIndex--
+      }
+      console.log(nums)
+      console.log(nonZeroIndex)
+
+    }
+    for (let i=nonZeroIndex;i>0;i--) {
+      nums[i] = 0
+    }
+    return nums
+  }
+
   return (
     <div>
       <br />
@@ -183,7 +219,7 @@ const Array = () => {
         <Form.Group>
         <Row>
           <Col xs={2}>
-            <Form.Control type="string" onChange={saveInput} />
+            <Form.Control type="string" maxLength={1} onChange={saveInput} />
           </Col>
           <Col>
             <Button variant="primary" onClick={addNewItem}>Add Item</Button>
@@ -233,6 +269,21 @@ const Array = () => {
       <br />
       <h4>Deduplication: {JSON.stringify([3,2,2,3,3,4,5,6,10,11,2,12,31,11,31,32])}</h4>
       <h4>Deduplication Iteration: {JSON.stringify(removeDuplicateIteration([3,2,2,3,3,4,5,6,10,11,2,12,31,11,31,32]))}</h4>
+      <hr />
+
+      <br />
+      <h4>Replace Elements with Greatest Element on the right side</h4>
+      <h4>{JSON.stringify(replaceElements([17,18,5,4,6,1]))}</h4>
+      <hr />
+
+      <br />
+      <h4>Move Zero to the Right of [0,1,0,3,12]</h4>
+      <h4>Result: {JSON.stringify(moveZeroToRight([0,1,0,3,12]))}</h4>
+      <hr />
+
+      <br />
+      <h4>Move Zero to the Left of [0,1,0,3,12]</h4>
+      <h4>Result: {JSON.stringify(moveZeroToLeft([0,1,0,3,12]))}</h4>
       <hr />
     </div>
   )
