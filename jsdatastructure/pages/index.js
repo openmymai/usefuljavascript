@@ -1,13 +1,12 @@
-import React from 'react'
-import { Container } from 'react-bootstrap'
+import React from 'react';
 
 const App = () => {
   var matrix = [
-    [3,6,9],
-    [2,5,8],
-    [1,4,7]
-  ]
-  console.log(matrix.length)
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+  ];
+  console.log(matrix.length);
 
   // Original Matrix
   //  [1,2,3]
@@ -22,22 +21,22 @@ const App = () => {
   //  [2,5,8]
   //  [1,4,7]
 
-  var str = "hello"
-  const spreadStr = [...str]
+  var str = "hello";
+  const spreadStr = [...str];
 
   // Spread Operator
-  const spreadMatrix = [...matrix]
+  const spreadMatrix = [...matrix];
   // Matrix Clockwise Rotate 90 degree 
   
   // Start from matrix[0].map like making for (i=0;i<len;i++)
-  const matrixClock = matrix[0].map((col, index) => matrix.map(row => row[index]).reverse())
-  console.log(matrix.map((row,index) => row[index]))
+  const matrixClock = matrix[0].map((col, index) => matrix.map(row => row[index]).reverse());
+  console.log(matrix.map((row,index) => row[index]));
   
   // Same way matrix[0].map = for (let i=0;i<matrix.length;i++)
-  let mm
+  let mm;
   for (let i=0;i<matrix.length;i++){
-    mm = matrix.map(row => row[i]).reverse()
-    console.log(mm)
+    mm = matrix.map(row => row[i]).reverse();
+    console.log(mm);
   }
 
   // original matrix -> [[1,2,3],[4,5,6],[7,8,9]]
@@ -47,13 +46,12 @@ const App = () => {
   // row[index].reverse() -> [[7,4,1],[8,5,2],[9,6,3]]
   
   // Matrix Anti Clockwise Rotate 90 degree 
-  const matrixAntiClock = matrix[0].map((col, index) => matrix.map(row => row[matrix.length - 1 - index]))
+  const matrixAntiClock = matrix[0].map((col, index) => matrix.map(row => row[matrix.length - 1 - index]));
 
   return (
     <div>
       <br />
       <hr />
-      <Container>
         <h1>Original Array</h1>
         <br />
         {JSON.stringify(matrix)}
@@ -73,10 +71,9 @@ const App = () => {
         <br />
         {spreadStr.join(" ")}
         <br />
-      </Container>
       <hr />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

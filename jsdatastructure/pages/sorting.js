@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
-import { Container } from 'react-bootstrap'
+import React from 'react';
 
-const sorting = () => {
+const Sorting = () => {
   // Bubble Sort
   // Bubble sorting is the simplest sorting algorithm.
   // It simply iterates over the entire array and swaps
@@ -116,7 +115,7 @@ const sorting = () => {
   return (
     <div>
       <br />
-      <Container>
+      <hr />
         <h1>Bubble Sort</h1>
         <h4>Original</h4>
         {JSON.stringify(bubbleArray)}
@@ -144,10 +143,9 @@ const sorting = () => {
         <h4>Sorted Array</h4>
         {JSON.stringify(quickSort(quicksortArray))}
         <hr />
-      </Container>
     </div>
   )
 
 }
 
-export default sorting
+export default Sorting

@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
-import { Container } from 'react-bootstrap'
+import React, { useState } from 'react';
 
-const binarysearch = () => {
+const Binarysearch = () => {
   const [ insertValue, setInsertValue ] = useState(0)
   var exarr = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]
   // Binary Search Iteration -> e.target.value is always a string
@@ -46,17 +45,15 @@ const binarysearch = () => {
     <div>
       <br />
       <hr />
-      <Container>
         <h1>Binary Search</h1>
         <h4>Array = {JSON.stringify(exarr)}</h4>
         <h4>Search <input onChange={e => setInsertValue(+e.target.value)} /></h4>
         <h3>Search {insertValue}, Result in location: {binarySearch(exarr, insertValue)}</h3>
         <h3>Binary Search Recursive</h3>
         <h3>Search Result in location: {binarySearchRecursive(exarr, insertValue)}</h3>
-      </Container>
       <hr />
     </div>
   )
 }
 
-export default binarysearch
+export default Binarysearch

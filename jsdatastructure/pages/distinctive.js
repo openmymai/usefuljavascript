@@ -1,6 +1,6 @@
 import React from "react"
 
-const Home = () => {
+const Distinctive = () => {
 
   var data = {
     order: [{
@@ -46,9 +46,9 @@ const Home = () => {
 
   console.log(array)
   return (
-    <div className="container">
+    <div>
       <br />
-      Original
+      <h3>Original</h3>
       
       {data.order.map((item,index) =>
         <ul style={{listStyle: "none"}} key={index}>
@@ -56,7 +56,7 @@ const Home = () => {
         </ul>
       )}
       <br />
-      After Distinct
+      <h3>After Distinct</h3>
       
       {array.map((item,index) =>
         <ul style={{listStyle: "none"}} key={index}>
@@ -67,4 +67,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Distinctive
