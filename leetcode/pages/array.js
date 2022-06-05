@@ -11,6 +11,7 @@ const Array = () => {
     const re = /^[0-1\b]+$/
 
     if (e.target.value === '' || re.test(e.target.value)) {
+      e.preventDefault()
       setInput(+e.target.value)
     }
   }
@@ -193,6 +194,7 @@ const Array = () => {
     return nums
   }
 
+  // Move Zero to the Left
   const moveZeroToLeft = (nums) => {
     let nonZeroIndex = nums.length - 1
     let len = nums.length - 1
@@ -201,15 +203,34 @@ const Array = () => {
         nums[nonZeroIndex] = nums[i]
         nonZeroIndex--
       }
-      console.log(nums)
-      console.log(nonZeroIndex)
-
     }
     for (let i=nonZeroIndex;i>0;i--) {
       nums[i] = 0
     }
     return nums
   }
+
+  // Sort Array by Parity
+  var sortArrayByParity = (nums) => {
+    let left = 0
+    let right = nums.length - 1
+    while (left < right) {
+      while (nums[left] % 2 == 0) {
+          left += 1
+      }
+      while (nums[right] % 2 == 1) {
+          right -= 1
+      }
+      if(left<right) {
+          let temp = nums[left]
+          nums[left] = nums[right]
+          nums[right] = temp
+      }
+      left += 1
+      right -= 1
+    }
+    return nums
+};
 
   return (
     <div>
@@ -284,6 +305,11 @@ const Array = () => {
       <br />
       <h4>Move Zero to the Left of [0,1,0,3,12]</h4>
       <h4>Result: {JSON.stringify(moveZeroToLeft([0,1,0,3,12]))}</h4>
+      <hr />
+
+      <br />
+      <h4>Sort Array by Parity [3,1,2,4]</h4>
+      <h4>Result: {JSON.stringify(sortArrayByParity([3,1,2,4]))}</h4>
       <hr />
     </div>
   )
