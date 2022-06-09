@@ -45,9 +45,6 @@ const App = () => {
   // Matrix Anti Clockwise Rotate 90 degree 
   const matrixAntiClock = matrix[0].map((col, i) => matrix.map(row => row[matrix.length - 1 - i]));
 
-  let aa = 0.1
-  let bb = 0.2
-  console.log(aa+bb)
   return (
     <div>
       <br />
