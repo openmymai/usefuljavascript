@@ -31,7 +31,6 @@ const Distinctive = () => {
     var price = +invoice.priceGross
     // Without || 0, it print NaN (Not a number), double || to precise it.
     map[name] = (map[name] || 0) + price 
-    console.log(map)
     return map
   }, {})
 

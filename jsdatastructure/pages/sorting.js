@@ -35,9 +35,7 @@ const Sorting = () => {
 
     for (var i=0; i<len; i++) {
       min = i
-      console.log("ink", i)
       for(var j=i+1; j<len; j++) {
-        console.log("jam", j)
         if(items[j] < items[min]) {
           min = j
         }

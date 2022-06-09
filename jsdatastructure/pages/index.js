@@ -6,7 +6,6 @@ const App = () => {
     [4,5,6],
     [7,8,9]
   ];
-  console.log(matrix.length);
 
   // Original Matrix
   //  [1,2,3]
@@ -29,45 +28,59 @@ const App = () => {
   // Matrix Clockwise Rotate 90 degree 
   
   // Start from matrix[0].map like making for (i=0;i<len;i++)
-  const matrixClock = matrix[0].map((col, index) => matrix.map(row => row[index]).reverse());
-  console.log(matrix.map((row,index) => row[index]));
+  const matrixClock = matrix[0].map((col, i) => matrix.map(row => row[i]).reverse());
   
   // Same way matrix[0].map = for (let i=0;i<matrix.length;i++)
   let mm;
   for (let i=0;i<matrix.length;i++){
     mm = matrix.map(row => row[i]).reverse();
-    console.log(mm);
   }
 
   // original matrix -> [[1,2,3],[4,5,6],[7,8,9]]
-  // row => row[index] -> Essentially, this map extracts 
+  // row => row[i] -> Essentially, this map extracts 
   // a single column from a matrix, converting it into a row.
-  // row => row[index] -> [[1,4,7],[2,5,8],[3,6,9]]
-  // row[index].reverse() -> [[7,4,1],[8,5,2],[9,6,3]]
+  // row => row[i] -> [[1,4,7],[2,5,8],[3,6,9]]
+  // row[i].reverse() -> [[7,4,1],[8,5,2],[9,6,3]]
   
   // Matrix Anti Clockwise Rotate 90 degree 
-  const matrixAntiClock = matrix[0].map((col, index) => matrix.map(row => row[matrix.length - 1 - index]));
+  const matrixAntiClock = matrix[0].map((col, i) => matrix.map(row => row[matrix.length - 1 - i]));
 
+  let aa = 0.1
+  let bb = 0.2
+  console.log(aa+bb)
   return (
     <div>
       <br />
       <hr />
-        <h1>Original Array</h1>
+        <h3>Original Array</h3>
         <br />
-        {JSON.stringify(matrix)}
+        {matrix.map((x,i) => {
+          return (
+            <h6 key={i}>{(i == 0) ? '[' : ''}{'['}{x.join(',')}{']'}{i == '0' || i == '1' ? ',' : ''}{(i == 2) ? ']' : ''}</h6>
+          )
+        })}
         <br />
-        <h1>Spread Matrix</h1>
-        {JSON.stringify(spreadMatrix)}
+        <h3>Spread Matrix</h3>
+        {spreadMatrix.map((x,i) => {
+          return (
+            <h6 key={i}>{i == '0' ? '[' : ''}[{x.join(',')}]{i == '0' || i == '1' ? ',' : ''}{i == '2' ? ']' : ''}</h6>
+          )
+        })}
         <br />
-        <h1>Rotate Matrix Clockwise 90 degree</h1>
+        <h3>Rotate Matrix Clockwise 90 degree</h3>
+        {matrixClock.map((x,i) => {
+          return (
+            <h6 key={i}>{i == '0' ? '[' : ''}[{x.join(',')}]{i == '0' || i == '1' ? ',' : ''}{i == '2' ? ']' : ''}</h6>
+          )
+        })}
         <br />
-        {JSON.stringify(matrixClock)}
-        <br />
-        <h1>Rotate Matrix Anti Clockwise 90 degree</h1>
-        <br />
-        {JSON.stringify(matrixAntiClock)}
-        <br />
-        {JSON.stringify(spreadMatrix.join(" "))}
+        <h3>Rotate Matrix Anti Clockwise 90 degree</h3>
+        {matrixAntiClock.map((x,i) => {
+          return (
+            <h6 key={i}>{i == '0' ? '[' : ''}[{x.join(',')}]{i == '0' || i == '1' ? ',' : ''}{i == '2' ? ']' : ''}</h6>
+          )
+        })}
+
         <br />
         {spreadStr.join(" ")}
         <br />
