@@ -65,6 +65,7 @@ const App = () => {
         })}
         <br />
         <h3>Rotate Matrix Clockwise 90 degree</h3>
+        <h6>{"const matrixClock = matrix[0].map((col, i) => matrix.map(row => row[i]).reverse());"}</h6>
         {matrixClock.map((x,i) => {
           return (
             <h6 key={i}>{i == '0' ? '[' : ''}[{x.join(',')}]{i == '0' || i == '1' ? ',' : ''}{i == '2' ? ']' : ''}</h6>
@@ -72,6 +73,7 @@ const App = () => {
         })}
         <br />
         <h3>Rotate Matrix Anti Clockwise 90 degree</h3>
+        <h6>{"const matrixAntiClock = matrix[0].map((col, i) => matrix.map(row => row[matrix.length - 1 - i]));"}</h6>
         {matrixAntiClock.map((x,i) => {
           return (
             <h6 key={i}>{i == '0' ? '[' : ''}[{x.join(',')}]{i == '0' || i == '1' ? ',' : ''}{i == '2' ? ']' : ''}</h6>
