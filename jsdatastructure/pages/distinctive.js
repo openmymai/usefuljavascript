@@ -34,8 +34,6 @@ const Distinctive = () => {
     return map
   }, {})
 
-  console.log(mapoutput)
-
   var array = Object.keys(mapoutput).map((name) => {
     return {
       fullName: name,
@@ -43,7 +41,6 @@ const Distinctive = () => {
     }
   })
 
-  console.log(array)
   return (
     <div>
       <br />
